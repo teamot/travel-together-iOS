@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PTh-HN-jqR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--여행 방 목록-->
+        <scene sceneID="OSg-mp-lBd">
+            <objects>
+                <tableViewController title="여행 방 목록" id="CSb-lu-q0Y" customClass="TravelListTableViewController" customModule="TravelWith" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mha-bs-WF7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Hkd-D7-uWa">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="다가오는 여행"/>
+                                <segment title="지난 여행"/>
+                            </segments>
+                            <connections>
+                                <action selector="touchedSegmentation:" destination="CSb-lu-q0Y" eventType="valueChanged" id="1ug-3s-yj6"/>
+                            </connections>
+                        </segmentedControl>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="travelCell" rowHeight="150" id="Xqe-Hw-6qh" customClass="TravelListTableViewCell" customModule="TravelWith" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="60" width="414" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xqe-Hw-6qh" id="fC6-96-A5A">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w0A-3y-4SQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="R2W-bO-9Yu">
+                                            <rect key="frame" x="164" y="46" width="86" height="49"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="travelTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hia-U0-sXT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="86" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="travelLength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzK-Ol-UED">
+                                                    <rect key="frame" x="7.5" y="34.5" width="71" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wMh-si-h3d">
+                                            <rect key="frame" x="324" y="11" width="70" height="20"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SeI-wh-KrU">
+                                                    <rect key="frame" x="0.0" y="0.5" width="31" height="19.5"/>
+                                                    <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlk-np-jmM">
+                                                    <rect key="frame" x="39" y="0.0" width="31" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="w0A-3y-4SQ" secondAttribute="trailing" id="3jq-qt-yb4"/>
+                                        <constraint firstItem="R2W-bO-9Yu" firstAttribute="centerX" secondItem="fC6-96-A5A" secondAttribute="centerX" id="A6y-xR-tkA"/>
+                                        <constraint firstAttribute="bottom" secondItem="w0A-3y-4SQ" secondAttribute="bottom" id="H46-to-uau"/>
+                                        <constraint firstItem="wMh-si-h3d" firstAttribute="trailing" secondItem="fC6-96-A5A" secondAttribute="trailingMargin" id="Qca-Qg-aMl"/>
+                                        <constraint firstAttribute="bottom" secondItem="R2W-bO-9Yu" secondAttribute="bottom" constant="55" id="cMs-vV-vUh"/>
+                                        <constraint firstItem="wMh-si-h3d" firstAttribute="top" secondItem="fC6-96-A5A" secondAttribute="topMargin" id="lzz-5C-Vlw"/>
+                                        <constraint firstItem="w0A-3y-4SQ" firstAttribute="leading" secondItem="fC6-96-A5A" secondAttribute="leading" id="qYs-rq-K5g"/>
+                                        <constraint firstItem="w0A-3y-4SQ" firstAttribute="top" secondItem="fC6-96-A5A" secondAttribute="top" id="sSC-Ds-zhY"/>
+                                        <constraint firstItem="R2W-bO-9Yu" firstAttribute="top" secondItem="wMh-si-h3d" secondAttribute="bottom" constant="15" id="sqA-iL-UfZ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="backgroundImage" destination="w0A-3y-4SQ" id="KeK-jg-Jt6"/>
+                                    <outlet property="countOfMember" destination="mlk-np-jmM" id="ggW-fd-fBt"/>
+                                    <outlet property="travelLength" destination="lzK-Ol-UED" id="QZj-Sc-y5x"/>
+                                    <outlet property="travelTitle" destination="Hia-U0-sXT" id="1Ip-mg-Oun"/>
+                                    <segue destination="gge-i9-l6H" kind="show" id="Q4g-dB-TjZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CSb-lu-q0Y" id="Wf3-aQ-qzD"/>
+                            <outlet property="delegate" destination="CSb-lu-q0Y" id="t8u-Y9-9Ve"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="여행방 목록" id="Td3-U5-ycF">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="uSl-xh-jiE">
+                                <connections>
+                                    <segue destination="Vo6-fE-cEM" kind="presentation" id="BAx-Hm-Q3h"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="search" id="bZS-je-chb">
+                                <connections>
+                                    <action selector="touchSearchButton:" destination="CSb-lu-q0Y" id="Vlu-ad-yBt"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="choosingTravelTypeSegmentation" destination="Hkd-D7-uWa" id="cB1-yz-7XL"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lhl-PH-BGO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614.375" y="-236.25"/>
+        </scene>
+        <!--여행 방 추가-->
+        <scene sceneID="sxI-LK-2fg">
+            <objects>
+                <navigationController title="여행 방 추가" id="Vo6-fE-cEM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cv5-pB-7d4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="va6-68-YeH" kind="relationship" relationship="rootViewController" id="ZH2-Ru-xUu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tbo-mk-d8q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1616" y="-1036"/>
+        </scene>
+        <!--새로운 여행방-->
+        <scene sceneID="fmD-kg-XUd">
+            <objects>
+                <viewController title="새로운 여행방" id="va6-68-YeH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X3R-oI-pgV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="여행 방 이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAg-Qd-zfY">
+                                <rect key="frame" x="20" y="81" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="여행 시작일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFc-MD-fbL">
+                                <rect key="frame" x="20" y="152" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="여행 시작일을 설정" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rp4-Lz-hpy">
+                                <rect key="frame" x="132" y="147" width="262" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="여행 종료일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARO-KR-ldt">
+                                <rect key="frame" x="20" y="194" width="93" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="여행 종료일을 설정" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lPe-fl-6aM">
+                                <rect key="frame" x="132" y="189" width="262" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="0Eg-DJ-lnr">
+                                <rect key="frame" x="0.0" y="248" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="여행방 커버 이미지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvX-d2-AT3">
+                                <rect key="frame" x="20" y="454" width="127" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1V-Vv-QaK">
+                                <rect key="frame" x="173" y="449" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="HqF-cM-ywF"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="새로운 여행방" id="lod-F0-mGU">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="VVO-AD-W0X"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="4QH-S4-0ZX"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KgY-Db-BZS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2456.521739130435" y="-1037.2767857142858"/>
+        </scene>
+        <!--여행 방-->
+        <scene sceneID="JUh-Vv-Oss">
+            <objects>
+                <tableViewController title="여행 방" id="gge-i9-l6H" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6TP-MO-Ul5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aUG-nX-u9z">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aUG-nX-u9z" id="J2O-bP-roa">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gge-i9-l6H" id="Vd0-PU-NxL"/>
+                            <outlet property="delegate" destination="gge-i9-l6H" id="H7e-KZ-J06"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="여행방" id="j6E-0z-NQt">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="3Ok-Lo-wSj"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1eH-lU-1ed" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2457" y="-235"/>
+        </scene>
+        <!--공지사항-->
+        <scene sceneID="AOz-nV-NVr">
+            <objects>
+                <tableViewController title="공지사항" id="KbC-2Q-4Rj" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pVG-9y-nJ0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bSA-nX-7Ge">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bSA-nX-7Ge" id="Bld-s1-jfo">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KbC-2Q-4Rj" id="dq4-lv-FmQ"/>
+                            <outlet property="delegate" destination="KbC-2Q-4Rj" id="4gf-c6-Fcr"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cf7-qk-XD7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3423" y="-235"/>
+        </scene>
+        <!--공지사항 추가 root-->
+        <scene sceneID="ywT-7g-jmD">
+            <objects>
+                <tableViewController title="공지사항 추가 root" id="IRa-dd-k41" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1ic-0V-kWh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ped-Mw-1aO">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ped-Mw-1aO" id="2Gw-eC-87S">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="IRa-dd-k41" id="zSf-TO-wyS"/>
+                            <outlet property="delegate" destination="IRa-dd-k41" id="pXL-JL-Ht2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="공지사항 추가" id="AGa-Vx-Qin"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FQv-Ud-ffY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5312" y="-235"/>
+        </scene>
+        <!--공지사항 추가-->
+        <scene sceneID="2w9-aL-eED">
+            <objects>
+                <navigationController title="공지사항 추가" id="ack-Vs-koL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ewl-Or-DQZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IRa-dd-k41" kind="relationship" relationship="rootViewController" id="uT6-wQ-AHt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jza-2C-0iM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4396" y="-235"/>
+        </scene>
+        <!--여행 일정-->
+        <scene sceneID="dZH-9H-sl7">
+            <objects>
+                <tableViewController title="여행 일정" id="8o1-sk-yRZ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BV4-Oo-I8g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="EX0-Yw-i3j">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EX0-Yw-i3j" id="t7t-ia-JPy">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8o1-sk-yRZ" id="Znh-sg-qbu"/>
+                            <outlet property="delegate" destination="8o1-sk-yRZ" id="9LT-Ql-9YR"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MsE-O4-wFI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3422" y="456"/>
+        </scene>
+        <!--여행 일정 추가 root-->
+        <scene sceneID="bv4-lN-awJ">
+            <objects>
+                <tableViewController title="여행 일정 추가 root" id="VCP-eX-stS" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1tz-a3-bKq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="b5J-Fb-crm">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b5J-Fb-crm" id="wFs-ml-MkJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VCP-eX-stS" id="VS2-bd-izz"/>
+                            <outlet property="delegate" destination="VCP-eX-stS" id="p6c-zA-n6o"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="여행 일정 추가" id="IdI-oZ-UVM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i7B-dt-OUP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5312" y="455"/>
+        </scene>
+        <!--여행일정 추가-->
+        <scene sceneID="SuV-4D-0lz">
+            <objects>
+                <navigationController title="여행일정 추가" id="e1y-zH-bYn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9hz-Vj-kbP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VCP-eX-stS" kind="relationship" relationship="rootViewController" id="xOs-6s-Fpk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DYT-NN-iwK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4396" y="455"/>
+        </scene>
+        <!--설정-->
+        <scene sceneID="6Rf-Sn-oN1">
+            <objects>
+                <tableViewController id="vQE-nH-feS" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HwR-2P-y8B">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ypS-5o-QCK">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ypS-5o-QCK" id="yDB-tA-NsT">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vQE-nH-feS" id="svQ-YC-5c4"/>
+                            <outlet property="delegate" destination="vQE-nH-feS" id="SYE-5a-zq8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="설정" id="iJ3-SS-lWq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JIV-fx-6NO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1616" y="2097"/>
+        </scene>
+        <!--프로필 편집-->
+        <scene sceneID="ccL-13-gSB">
+            <objects>
+                <viewController title="프로필 편집" id="b08-nX-Vpc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ykL-1x-y3F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ArB-oe-5Le"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sXl-bp-HGW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2717" y="2097"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="faY-Pg-5PO">
+            <objects>
+                <navigationController id="EmU-0w-0DH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Setting" id="Mjl-ob-zIN"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SYJ-pJ-fTo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vQE-nH-feS" kind="relationship" relationship="rootViewController" id="8Yp-JR-7C2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CS8-sR-g51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893" y="2097"/>
+        </scene>
+        <!--Calender-->
+        <scene sceneID="ZmE-er-9hb">
+            <objects>
+                <navigationController id="rLz-Qm-wva" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calender" id="pJe-BJ-HD8"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hgf-up-kIc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oYI-Ys-rOY" kind="relationship" relationship="rootViewController" id="niR-PU-iV3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="seh-lU-dDk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893" y="887"/>
+        </scene>
+        <!--여행 달력-->
+        <scene sceneID="Uc8-4i-wGD">
+            <objects>
+                <viewController id="oYI-Ys-rOY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tj0-T6-kY0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="b4G-PS-esR"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="여행 달력" id="NP5-uz-jlT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ns8-4f-fTe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1616" y="887"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="xt7-IT-CDw">
+            <objects>
+                <tabBarController id="PTh-HN-jqR" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dmi-N6-fNr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="izd-Re-Vph" kind="relationship" relationship="viewControllers" id="bYA-62-l0h"/>
+                        <segue destination="rLz-Qm-wva" kind="relationship" relationship="viewControllers" id="RUk-Vo-BQs"/>
+                        <segue destination="EmU-0w-0DH" kind="relationship" relationship="viewControllers" id="7f3-Dq-9Nt"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pJj-jq-08S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-443" y="887"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="kUb-JG-gFR">
+            <objects>
+                <navigationController id="izd-Re-Vph" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="EQU-zo-gPj"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FUn-0w-mXo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CSb-lu-q0Y" kind="relationship" relationship="rootViewController" id="3Wn-2v-cD9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zUs-iE-8w1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893" y="-235"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="person.circle.fill" catalog="system" width="64" height="62"/>
+    </resources>
+</document>
